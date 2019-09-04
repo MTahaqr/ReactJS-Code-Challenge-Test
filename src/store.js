@@ -189,6 +189,10 @@ class TodosContainer extends Container {
     const selectedtodoList = todoList.filter(list => list.id === parseInt(selectedTodoListId))
     return selectedtodoList[0].text
   }
+
+  getFilterType() {
+    return this.state.filterType
+  }
 }
 
 
