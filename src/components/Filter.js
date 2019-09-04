@@ -14,7 +14,7 @@ const Filter = ({ onSelect }) => (
     </Wrapper>
 )
 
-const Wrapper = styled.p`
+const Wrapper = styled.div`
   font-size: 15px;
   cursor: pointer;
   margin: 0px

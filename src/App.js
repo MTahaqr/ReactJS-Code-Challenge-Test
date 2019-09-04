@@ -18,6 +18,7 @@ function App() {
             const list = todos.getList()
             const todoList = todos.getTodoList()
             const showListOrItem = todos.showListOrItem()
+            const getSelectedListName = todos.getSelectedListName()
             return (
               <TodosWrapper>
                 <DivWrapperLeftSelect>
@@ -36,7 +37,7 @@ function App() {
                     onSelect={todos.showSelectedList}
                   />}
                 </DivWrapperRightSelect>
-                {(showListOrItem !== 'todoLists') && <Filter onSelect={todos.filter} />}
+                {(showListOrItem !== 'todoLists') && <Div><Filter onSelect={todos.filter} /> <Heading>{getSelectedListName}</Heading></Div>}
                 <TodoList items={showListOrItem === 'todoLists' ? todoList : list} showListOrItem={showListOrItem} toggleComplete={todos.toggleComplete} />
               </TodosWrapper>
             )
@@ -70,6 +71,10 @@ const DivWrapperLeftSelect = styled.div`
 const DivWrapperRightSelect = styled.div`
   position:absolute;
   right: 23%
+`
+const Heading = styled.h3`
+`
+const Div = styled.div`
 `
 
 export default App

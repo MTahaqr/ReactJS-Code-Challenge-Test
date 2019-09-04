@@ -183,6 +183,12 @@ class TodosContainer extends Container {
   showListOrItem() {
     return this.state.showListOrItem
   }
+
+  getSelectedListName() {
+    const { selectedTodoListId, todoList } = this.state
+    const selectedtodoList = todoList.filter(list => list.id === parseInt(selectedTodoListId))
+    return selectedtodoList[0].text
+  }
 }
 
 
